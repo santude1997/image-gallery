@@ -7,15 +7,14 @@ type Props={
 
 export default function ImgContainer({photo}:Props){
     return (
-      <div
-        key={photo.id}
-        className="h-64 bg-gray-200 rounded-xl relative overflow-hidden group"
-      >
+      <div className="h-64 bg-gray-200 rounded-xl relative overflow-hidden group">
         <Image
           src={photo.src.large}
           alt={photo.alt}
           fill={true}
           sizes="(max-width: 786px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="blur"
+          blurDataURL={photo.blurredDataUrl}
           className="object-cover group-hover:opacity-75"
         />
       </div>
